@@ -26,8 +26,11 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const authRouter = require("./auth/auth.js");
+const aggregationRouter = require("./routes/aggregation.js");
 
 app.use("/api/auth", authRouter);
+app.use("/api/aggregate", aggregationRouter);
+
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
